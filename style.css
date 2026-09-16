@@ -1,0 +1,102 @@
+     /* CSS Değişkenleri - Renk Paleti Yönetimi */
+:root {
+    --primary-color: #6c5ce7;
+    --hover-color: #a29bfe;
+    --correct-color: #00b894;
+    --wrong-color: #d63031;
+    --bg-color: #dfe6e9;
+}
+
+/* Genel Sayfa Düzeni */
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+/* Ekran Kontrolleri (Gösterme / Gizleme) */
+.screen {
+    display: none;
+}
+
+.screen.active {
+    display: block;
+}
+
+/* Başlık ve Skor Alanı */
+h1, h2 {
+    color: var(--primary-color);
+}
+
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 28px;
+    color: var(--primary-color);
+}
+
+#high-score-display {
+    display: inline-block;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* Buton ve Şık Izgarası */
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(129, 93, 222, 0.3);
+    font-weight: bold;
+}
+
+/* Buton Üzerine Gelindiğinde (Hover) */
+.btn:hover{
+    background-color: var(--hover-color);
+}
+
+
+/* Görsel Geri Bildirim (Doğru / Yanlış Renkleri) */
+.btn.correct {
+    background-color: var(--correct-color) ;
+    
+}
+
+.btn.wrong {
+    background-color: var(--wrong-color) ;
+    
+}
+
+.btn:disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+}
